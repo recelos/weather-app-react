@@ -1,0 +1,69 @@
+
+
+.CurrentWeather{     
+        margin: auto;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        color: aliceblue;
+        text-align: center;
+        min-width: 10rem;
+        width: 17rem;
+
+        background-image: linear-gradient(
+            30deg,
+            var(--gradient1) 0%,
+            var(--gradient2) 60%,
+            var(--gradient3) 70%,
+            var(--gradient4) 83%,
+            var(--gradient5) 85%,
+            var(--gradient6) 100%
+        );
+
+        transition: scale .5s;
+
+        box-shadow: 0 5px 12px 0 #0f0f0f9f;
+        transition: --gradient1 .3s, --gradient2 .3s, --gradient3 .5s, --gradient4 .5s, --gradient5 .5s, --gradient6 .5s;
+        z-index: 0;
+    }
+    .CurrentWeather:hover{      
+        --gradient1:rgb(31, 41, 102);
+        --gradient2:rgb(31, 41, 102);
+        --gradient3:rgb(46, 56, 117);
+        --gradient4:rgb(59, 68, 126);
+        --gradient5:rgb(59, 68, 126);
+        --gradient6:rgb(67, 76, 139);
+
+        border-color: black;
+        transform: scale(1.2);
+    }
+    @property --gradient1 {
+        syntax: '<color>';
+        initial-value: rgb(31, 41, 102);
+        inherits: false;
+    }
+    
+    @property --gradient2 {
+        syntax: '<color>';
+        initial-value: rgb(31, 41, 102);
+        inherits: false;
+    }
+    @property --gradient3 {
+        syntax: '<color>';
+        initial-value: rgb(31, 41, 102);
+        inherits: false;
+    }
+    @property --gradient4 {
+        syntax: '<color>';
+        initial-value: rgb(46, 56, 117);
+        inherits: false;
+    }
+    @property --gradient5 {
+        syntax: '<color>';
+        initial-value: rgb(46, 56, 117);
+        inherits: false;
+    }
+    @property --gradient6 {
+        syntax: '<color>';
+        initial-value: rgb(41, 54, 138);
+        inherits: false;
+    }
