@@ -62,14 +62,14 @@ function App() {
 
   const handleClick = () => {
     async function fetchData(){
-      const currentWeatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${'5ac551a55737eb30da07eae07eab3ae7'}`);
+      const currentWeatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
       if (currentWeatherResponse.status!==200) return;
 
       const currentWeatherJson = await currentWeatherResponse.json();
       setCurrentWeather(currentWeatherJson);
       console.log(currentWeatherJson);
 
-      const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${currentWeatherJson.coord.lat}&lon=${currentWeatherJson.coord.lon}&exclude=current,hourly,minutely&appid=${'5ac551a55737eb30da07eae07eab3ae7'}`)
+      const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${currentWeatherJson.coord.lat}&lon=${currentWeatherJson.coord.lon}&exclude=current,hourly,minutely&appid=${apiKey}`)
 
       if(forecastResponse.status!==200) return;
 
