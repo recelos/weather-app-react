@@ -10,6 +10,9 @@
 
     background-color: rgb(31, 41, 102);
 }
+.Forecast h2{
+  letter-spacing: .05rem;
+}
 .Forecast:hover{
     border-color: black;
     transform: scale(1.2);

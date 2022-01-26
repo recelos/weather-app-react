@@ -12,16 +12,16 @@ function ForecastAlternate(props){
     : new Date(props.sunrise*1000).getHours())
     + ":" + 
     ((new Date(props.sunrise*1000).getMinutes() < 10) ?
-     '0' + new Date(props.sunrise*1000).getMinutes() 
-     : new Date(props.sunrise*1000).getMinutes()); 
+    '0' + new Date(props.sunrise*1000).getMinutes() 
+    : new Date(props.sunrise*1000).getMinutes()); 
 
-     const sunset = ((new Date(props.sunset*1000).getHours() < 10) ? 
-     '0' + new Date(props.sunset*1000).getHours() 
-     : new Date(props.sunset*1000).getHours())
-     + ":" + 
-     ((new Date(props.sunset*1000).getMinutes() < 10) ?
-      '0' + new Date(props.sunset*1000).getMinutes() 
-      : new Date(props.sunset*1000).getMinutes());
+    const sunset = ((new Date(props.sunset*1000).getHours() < 10) ? 
+    '0' + new Date(props.sunset*1000).getHours() 
+    : new Date(props.sunset*1000).getHours())
+    + ":" + 
+    ((new Date(props.sunset*1000).getMinutes() < 10) ?
+    '0' + new Date(props.sunset*1000).getMinutes() 
+    : new Date(props.sunset*1000).getMinutes());
 
     return(
             <div className="Forecast" onClick={onClick}>

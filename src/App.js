@@ -64,21 +64,17 @@ function App() {
     async function fetchData(){
       const currentWeatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
       if (currentWeatherResponse.status!==200) return;
-
       const currentWeatherJson = await currentWeatherResponse.json();
-      setCurrentWeather(currentWeatherJson);
-      console.log(currentWeatherJson);
 
       const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${currentWeatherJson.coord.lat}&lon=${currentWeatherJson.coord.lon}&exclude=current,hourly,minutely&appid=${apiKey}`)
-
-      if(forecastResponse.status!==200) return;
-
+      if (forecastResponse.status!==200) return;
       const forecastJson = await forecastResponse.json();
+
+      setCurrentWeather(currentWeatherJson);
       setForecast(forecastJson);
     }
 
     if(city === '') return;
-
     fetchData();
   }
 
@@ -91,7 +87,7 @@ function App() {
 
   return (
     <div className="App">
-       <ScrollContainer> 
+      <ScrollContainer> 
         <ScrollPage page={0}>
           <Animator animation={batch(Sticky(), Fade(), ZoomOut(), MoveOut(0, -1000))}>
             <SplashScreen />
@@ -99,36 +95,43 @@ function App() {
         </ScrollPage>
 
         <ScrollPage page={1}>
-          <Animator animation={batch(StickyIn(), FadeIn(), MoveIn(0, 800), ZoomOut())}>
-            {!isAlternateCurrentWeather ?
-              currentWeather &&
-              <CurrentWeather
-              city={currentWeather.name}
-              description={currentWeather.weather[0].description}
-              temperature={Math.round(parseFloat(currentWeather.main.temp) - 273.15)}
-              pressure={currentWeather.main.pressure}
-              imageSource={currentWeather.weather[0].icon}
-              onClick={() => setIsAlternateCurrentWeather(!isAlternateCurrentWeather)}  
-              />
-              :
-              currentWeather && 
-              <CurrentWeatherAlternate
-              city={currentWeather.name}
-              description={currentWeather.weather[0].description}
-              imageSource={currentWeather.weather[0].icon}
-              humidity={currentWeather.main.humidity}
-              sunset={currentWeather.sys.sunset+currentWeather.timezone}
-              sunrise={currentWeather.sys.sunrise+currentWeather.timezone}
-              onClick={() => setIsAlternateCurrentWeather(!isAlternateCurrentWeather)}
-              />}
-              <input className='input' placeholder='e.g. London' onInput={handleInput} onKeyPress={handleKeyPress} />
-              <button className='btn' onClick={handleClick}>Submit</button>
-            {forecast &&
-            <ForecastGrid 
-              forecast = {forecast.daily}
-              timezone_offset = {forecast.timezone_offset}
-              />}
-          </Animator>
+          <div style={{display: 'flex', justifyContent:'center', flexDirection: 'column', height:'100%', alignItems:'center', margin:'0'}}>
+            <Animator animation={batch(StickyIn(), FadeIn(), MoveIn(800, 800), ZoomOut())}>
+              {!isAlternateCurrentWeather ?
+                (currentWeather &&
+                <CurrentWeather
+                city={currentWeather.name}
+                description={currentWeather.weather[0].description}
+                temperature={Math.round(parseFloat(currentWeather.main.temp) - 273.15)}
+                pressure={currentWeather.main.pressure}
+                imageSource={currentWeather.weather[0].icon}
+                onClick={() => setIsAlternateCurrentWeather(!isAlternateCurrentWeather)}  
+                />)
+                :
+                (currentWeather && 
+                <CurrentWeatherAlternate
+                city={currentWeather.name}
+                description={currentWeather.weather[0].description}
+                imageSource={currentWeather.weather[0].icon}
+                humidity={currentWeather.main.humidity}
+                sunset={currentWeather.sys.sunset+currentWeather.timezone}
+                sunrise={currentWeather.sys.sunrise+currentWeather.timezone}
+                onClick={() => setIsAlternateCurrentWeather(!isAlternateCurrentWeather)}
+                />)}
+                <Animator animation={batch(MoveIn(-800, 0))}>
+                  <input className='input' placeholder='e.g. London' onInput={handleInput} onKeyPress={handleKeyPress} />
+                  <button className='btn' onClick={handleClick}>Submit</button>  
+                </Animator>
+                <Animator animation={batch(FadeIn(), MoveIn(-1600, 1000), ZoomOut())}>
+                  {forecast &&
+                  <ForecastGrid 
+                    forecast = {forecast.daily}
+                    timezone_offset = {forecast.timezone_offset}
+                  />
+                  }
+              </Animator>
+            </Animator>
+          </div>
         </ScrollPage>
       </ScrollContainer>
     </div>

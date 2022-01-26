@@ -3,9 +3,8 @@
   font-family: Krub, sans-serif;
   text-align: center;
   background-image: linear-gradient(to bottom right, blue,cyan);;
+  margin: auto;
 }
-
-
 
 input.input {
 	width: 200px;
@@ -72,17 +71,4 @@ input.input:focus {
 	border-color: #141a41;
 	box-shadow: 0 0 0 4px #7fbdff65;
 }
-.my-node-enter {
-	opacity: 0;
-  }
-.my-node-enter-active {
-	opacity: 1;
-	transition: opacity 200ms;
-  }
-.my-node-exit {
-	opacity: 1;
-}
-.my-node-exit-active {
-	opacity: 0;
-	transition: opacity 200ms;
-  }
+
