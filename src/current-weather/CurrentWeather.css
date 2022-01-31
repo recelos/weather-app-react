@@ -1,7 +1,46 @@
+@media only screen and (min-width: 477px){
+  .CurrentWeather{     
+    margin: auto;
+    margin-bottom: 1.3rem;
+    padding: 1rem;
+    color: aliceblue;
+    text-align: center;
+    min-width: 10rem;
+    width: 17rem;
+  
+    background-color: rgb(31, 41, 102);
+  
+    transition: all .5s;
+  
+    box-shadow: 0 5px 12px 0 #0f0f0f9f;
+    z-index: 0;
+  }  
+}
 
-.CurrentWeather{     
+
+@media only screen and (max-width: 478px) {
+  .CurrentWeather{     
+    margin: auto;
+    margin-bottom: 1.3rem;
+    margin-top: 50px;
+    padding: 1rem;
+    color: aliceblue;
+    text-align: center;
+    min-width: 10rem;
+    width: 17rem;
+  
+    background-color: rgb(31, 41, 102);
+  
+    transition: all .5s;
+  
+    box-shadow: 0 5px 12px 0 #0f0f0f9f;
+    z-index: 0;
+  }
+    
+}
+/* .CurrentWeather{     
   margin: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
   padding: 1rem;
   color: aliceblue;
   text-align: center;
@@ -14,7 +53,9 @@
 
   box-shadow: 0 5px 12px 0 #0f0f0f9f;
   z-index: 0;
-}
+}  */
+
+
 .CurrentWeather h1{
   letter-spacing: 0.08rem;
 }
@@ -25,6 +66,7 @@
   animation-iteration-count: 1;
   animation-delay: .2;
   animation-timing-function: cubic-bezier(.12,.89,.98,.30);
+  z-index: 999;
 }
 @keyframes ShineAnimation{ 
   from { 

@@ -1,19 +1,17 @@
 import React from "react";
-import "./Forecast.css"
+import "./CurrentWeather.css";
 
-function ForecastAlternate(props){
-    const day       = props.day;
+function CurrentWeatherAlternate(props){
+    const city = props.city;
     const imageSource = props.imageSource;
-    const onClick = props.onClick;
-    const hum = props.hum;
-
+    const hum = props.humidity;
     const sunrise = ((new Date(props.sunrise*1000).getHours() < 10) ? 
     '0' + new Date(props.sunrise*1000).getHours() 
     : new Date(props.sunrise*1000).getHours())
     + ":" + 
     ((new Date(props.sunrise*1000).getMinutes() < 10) ?
     '0' + new Date(props.sunrise*1000).getMinutes() 
-    : new Date(props.sunrise*1000).getMinutes()); 
+    : new Date(props.sunrise*1000).getMinutes());
 
     const sunset = ((new Date(props.sunset*1000).getHours() < 10) ? 
     '0' + new Date(props.sunset*1000).getHours() 
@@ -23,9 +21,11 @@ function ForecastAlternate(props){
     '0' + new Date(props.sunset*1000).getMinutes() 
     : new Date(props.sunset*1000).getMinutes());
 
+    const changeCurrentWeatherCard = props.onClick;
+
     return(
-            <div className="Forecast" onClick={onClick}>
-                <h2>{day}</h2>
+            <div className="CurrentWeather" onClick={changeCurrentWeatherCard}>
+                <h1>{city}</h1>
                 <img src={`../icons/${imageSource}.png`} alt={imageSource} /> <hr />
                 <h4>Humidity: {hum}%</h4><hr />
                 <h4>Sunrise: {sunrise}</h4><hr />
@@ -34,4 +34,4 @@ function ForecastAlternate(props){
             </div>
     );
 }
-export default ForecastAlternate;
+export default CurrentWeatherAlternate;

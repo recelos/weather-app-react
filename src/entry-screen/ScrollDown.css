@@ -5,14 +5,7 @@
   justify-content: center;
   align-items: center;
 } 
- .chevron {
-   position: absolute;
-   width: 0.6rem * 3.5;
-   height: 0.6rem * 0.8;
-   opacity: 0;
-   transform: scale(0.3);
-   animation: move-chevron 3s ease-out infinite;
- }
+
  
  .chevron:first-child {
    animation: move-chevron 3s ease-out 1s infinite;

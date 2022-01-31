@@ -1,74 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Krub:wght@300&family=Noto+Sans+Display:wght@300&display=swap");
 .App {
-  font-family: Krub, sans-serif;
-  text-align: center;
-  background-image: linear-gradient(to bottom right, blue,cyan);;
-  margin: auto;
-}
-
-input.input {
-	width: 200px;
-	font-size: 22px;
-	background-color: transparent;
-	box-shadow: 0 5px 12px 0 #0f0f0f9f;
-	color: rgb(235, 235, 235);
-	border: unset;
-	border-bottom: 2px solid white;
-	padding: 10px 10px 5px 10px;
-	margin: 1rem;
-	transition: all 0.15s ease-out;
-}
-
-input.input:hover {
-	border-color: rgb(36, 138, 255);
-	color: white;
-}
-
-input.input:active,
-input.input:focus {
-	color: white;
-	border-color: rgb(36, 138, 255);
-	outline: none;
-	background-color: #1f2966;
-}
-.btn {
-	line-height: 1.5715;
-	position: relative;
-	display: inline-block;
-	font-weight: 400;
-	white-space: nowrap;
+	font-family: Krub, sans-serif;
 	text-align: center;
-	background-image: none;
-	border: 1px solid transparent;
-	box-shadow: 0 2px #00000004;
-	cursor: pointer;
-	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	touch-action: manipulation;
-	height: 40px;
-	padding: 4px 15px;
-	font-size: 14px;
-	border-radius: 2px;
-	color: #000000d9;
-	background: #fff;
-	border-color: #d9d9d9;
-	transition: all 0.15s ease-out, box-shadow 0.1s ease-out;
-}
-
-.btn:hover,
-.btn:focus {
-	color: #fff;
-	background: #1f2966;
-	border-color: #1f2966;
-}
-
-.btn:active {
-	color: #fff;
-	background: #141a41;
-	border-color: #141a41;
-	box-shadow: 0 0 0 4px #7fbdff65;
+	margin: auto;
+	align-items: center;
 }
 

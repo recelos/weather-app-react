@@ -1,38 +1,39 @@
 .Forecast{
-    margin: 1rem;
-    padding: 1rem;
-    color: aliceblue;
-    text-align: center;
-    width: 14rem;
-	box-shadow: 0 5px 12px 0 #0f0f0f9f;
-    z-index: 0;
-    transition: all .5s;
-
-    background-color: rgb(31, 41, 102);
+  width: 14rem;
+  font-family: Krub;
+  align-self: center;
+  margin: 1rem;
+  padding: 1rem;
+  color: aliceblue;
+  text-align: center;
+  box-shadow: 0 5px 12px 0 #0f0f0f9f;
+  transition: all .5s;
+  background-color: rgb(31, 41, 102);
 }
 .Forecast h2{
+  font-family: Krub;
   letter-spacing: .05rem;
 }
 .Forecast:hover{
-    border-color: black;
-    transform: scale(1.2);
-    animation-name: ShineAnimation;
-        animation-duration: 2s;
-        animation-iteration-count: 1;
-        animation-delay: .2;
-        animation-timing-function: cubic-bezier(.12,.89,.98,.30);
+  border-color: black;
+  transform: scale(1.2);
+  animation-name: ShineAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-delay: .2;
+    animation-timing-function: cubic-bezier(.12,.89,.98,.30);
 }
 @keyframes ShineAnimation{ 
-    from { 
-      background-repeat:no-repeat; 
-      background-image:-webkit-linear-gradient( top left, 
-                      rgba(255, 255, 255, 0.0) 0%, 
-                      rgba(255, 255, 255, 0.0) 45%, rgba(255, 255, 255, 0.2) 48%, 
-                      rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.2) 52%, 
-                      rgba(255, 255, 255, 0.0) 57%, rgba(255, 255, 255, 0.0) 100% ); 
-      background-position:-300px -250px; background-size: 600px 600px } 
-    to { 
-      background-repeat:no-repeat; 
-      background-position:250px 500px;
-    } 
-  }
+  from { 
+    background-repeat:no-repeat; 
+    background-image:-webkit-linear-gradient( top left, 
+      rgba(255, 255, 255, 0.0) 0%, 
+      rgba(255, 255, 255, 0.0) 45%, rgba(255, 255, 255, 0.2) 48%, 
+      rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.2) 52%, 
+      rgba(255, 255, 255, 0.0) 57%, rgba(255, 255, 255, 0.0) 100% ); 
+    background-position: -300px -250px; background-size: 600px 600px } 
+  to { 
+    background-repeat:no-repeat; 
+    background-position: 250px 500px;
+  } 
+}
