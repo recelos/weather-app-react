@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
-import SplashScreen from './entry-screen/SplashScreen';
-import WeatherScreen from './WeatherScreen';
+import SplashScreen from './components/entry-screen/SplashScreen';
+import WeatherScreen from './components/WeatherScreen';
 
 
 function App() {

@@ -5,7 +5,7 @@ import ForecastAlternate from "./ForecastAlternate";
 import "./ForecastGrid.css";
 
 function ForecastGrid(props){
-    const [isAlternate, setIsAlternate] = useState([false, false, false, false, false])
+    const [isAlternate, setIsAlternate] = useState([false, false, false, false, false]);
 
     const handleClick = (index) => {
         let newArray = [...isAlternate];
@@ -53,7 +53,6 @@ function ForecastGrid(props){
                                 sunset = {forecast.sunset + props.timezone_offset}
                                 onClick = {() => handleClick(i)}
                             />
-
                         )
                     );
                 })}
