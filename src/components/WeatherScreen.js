@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import CurrentWeather from './components/current-weather/CurrentWeather';
-import CurrentWeatherAlternate from './components/current-weather/CurrentWeatherAlternate';
+import { CSSTransition } from 'react-transition-group';
+import CurrentWeather from './current-weather/CurrentWeather';
+import CurrentWeatherAlternate from './current-weather/CurrentWeatherAlternate';
 import ForecastGrid from './forecast/ForecastGrid';
 import {IoIosExit} from 'react-icons/io'
 import './WeatherScreen.css'
 
 
-const apiKey = process.env.REACT_APP_API_KEY;
+const apiKey = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
 
 
 function WeatherScreen(props) {
@@ -95,6 +96,7 @@ function WeatherScreen(props) {
                 onMouseOut={({target})=>target.style.color="white"}
                 />
 
+
             {!isAlternateCurrentWeather ?
                 (currentWeather &&
                     <CurrentWeather
@@ -104,7 +106,8 @@ function WeatherScreen(props) {
                     pressure={currentWeather.main.pressure}
                     imageSource={currentWeather.weather[0].icon}
                     onClick={() => setIsAlternateCurrentWeather(!isAlternateCurrentWeather)}  
-                    />)
+                    />
+                    )
                     :
                     (currentWeather && 
                     <CurrentWeatherAlternate
@@ -118,6 +121,8 @@ function WeatherScreen(props) {
                     />
                     )
                 }
+
+
                 <input className='input' placeholder='e.g. London' onInput={handleInput} onKeyPress={handleKeyPress} />
                 <button className='btn' onClick={handleClick}>Submit</button>  
                 {forecast &&

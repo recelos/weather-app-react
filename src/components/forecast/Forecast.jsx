@@ -10,7 +10,7 @@ function Forecast(props){
     const onClick       = props.onClick;
 
     return(
-            <div className="Forecast" style={{width:'14rem'}} onClick={onClick}>
+            <div className="Forecast" onClick={onClick}>
                 <h2>{day}</h2>
                 <img src={`../icons/${imageSource}.png`} alt={imageSource}/> <hr />
                 <h4>{desc}</h4><hr />

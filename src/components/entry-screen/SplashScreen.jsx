@@ -1,5 +1,4 @@
 import React from "react";
-import ScrollDown from "./ScrollDown";
 import "./SplashScreen.css";
 
 function SplashScreen(props){
