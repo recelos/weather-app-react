@@ -1,6 +1,5 @@
 import React from "react";
 import "./Forecast.css"
-import {Col} from 'react-bootstrap'
 function Forecast(props){
     const day           = props.day;
     const temp          = Math.round(parseFloat(props.temp)-273.15);

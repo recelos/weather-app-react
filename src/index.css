@@ -6,8 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(0, 225, 255);
-  /* background-image: linear-gradient(to bottom right, rgb(0, 60, 255),cyan); */
-  background-image: url('../public/background-image3.svg');
+  /* background-image: linear-gradient(to bottom right, #003cff,#00ffff); */
+  background-image: url('../public/background-image4.svg');
   /* background-size: 200% 200%; */
   /* animation: flow 10s infinite; */
   height: 100%;

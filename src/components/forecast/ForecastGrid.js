@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import Forecast from "./Forecast";
 import ForecastAlternate from "./ForecastAlternate";
 import "./ForecastGrid.css";

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Forecast.css"
-import {Col} from 'react-bootstrap'
 
 function ForecastAlternate(props){
     const day           = props.day;

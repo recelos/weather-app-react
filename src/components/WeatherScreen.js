@@ -62,11 +62,17 @@ function WeatherScreen(props) {
     const handleClick = () => {
         async function fetchData(){
             const currentWeatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
-            if (currentWeatherResponse.status!==200) return;
+            if (currentWeatherResponse.status!==200) {
+                alert('Please enter a valid location');
+                return;
+            };
             const currentWeatherJson = await currentWeatherResponse.json();
 
             const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${currentWeatherJson.coord.lat}&lon=${currentWeatherJson.coord.lon}&exclude=current,hourly,minutely&appid=${apiKey}`)
-            if (forecastResponse.status!==200) return;
+            if (forecastResponse.status!==200) {
+                alert('Please enter a valid location');
+                return;                
+            };
             const forecastJson = await forecastResponse.json();
 
             console.log('fetched data');
@@ -74,7 +80,10 @@ function WeatherScreen(props) {
             setCurrentWeather(currentWeatherJson);
             setForecast(forecastJson);
         }
-        if(city === '') return;
+        if(city === '') {
+            alert('Please enter the city');
+            return
+        };
         fetchData();
     }
     
