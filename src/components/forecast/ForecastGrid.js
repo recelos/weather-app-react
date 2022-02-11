@@ -22,27 +22,26 @@ function ForecastGrid(props){
         return i > 0 && i < 7;
     });
 
-    console.log(props);
-
     return(
         <div className="ForecastGrid">
-            {forecasts.map((forecast, i)=>{
-                return(
-                    <Forecast
-                        key = {i}
-                        id = {i}
-                        day = {weekday[new Date(forecast.dt*1000).getDay()]}
-                        temp = {forecast.temp['day']}
-                        desc = {forecast.weather[0].description}
-                        press = {forecast.pressure}
-                        imageSource = {forecast.weather[0].icon}
-                        hum = {forecast.humidity}
-                        sunrise = {forecast.sunrise + props.timezone_offset}
-                        sunset = {forecast.sunset + props.timezone_offset}
-                        alternate = {isAlternate[i]}
-                        onClick = {() => handleClick(i)}
-                    />)
-                    }
+            {
+                forecasts.map((forecast, i) => {
+                    return(
+                        <Forecast
+                            key = {i}
+                            id = {i}
+                            day = {weekday[new Date(forecast.dt*1000).getDay()]}
+                            temp = {forecast.temp['day']}
+                            desc = {forecast.weather[0].description}
+                            press = {forecast.pressure}
+                            imageSource = {forecast.weather[0].icon}
+                            hum = {forecast.humidity}
+                            sunrise = {forecast.sunrise + props.timezone_offset}
+                            sunset = {forecast.sunset + props.timezone_offset}
+                            alternate = {isAlternate[i]}
+                            onClick = {() => handleClick(i)}
+                        />
+                    )}
                 )
             }
         </div>

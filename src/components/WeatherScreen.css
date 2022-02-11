@@ -1,6 +1,5 @@
 .WeatherScreen{
     margin: auto;
-    padding-top: 2rem;
     position: relative;
 }
 input.input {
@@ -77,5 +76,48 @@ input.input:focus {
 .icon:hover{
 	color:grey;
 	cursor: pointer;
-	transition: .3s;
+}
+
+.header{
+	padding-top: 0;
+	float:left;
+	color:white;
+	display:flex;
+	cursor: pointer;
+}
+
+.logo{
+	pointer-events: none;
+	margin-left: 1rem;
+	margin-right: 1rem;
+
+}
+@media (prefers-reduced-motion: no-preference) {
+	.logo {
+		animation: SplashScreen-logo-spin infinite 10s linear;
+	}
+}
+@keyframes SplashScreen-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+
+.transition-enter {
+	opacity: 0;
+}
+.transition-enter-active{
+	opacity: 1;
+	transition: all .5s;
+}
+.transition-exit{
+	opacity:1;
+}
+.transition-exit-active{
+	opacity:0;
+	transition: all .5s;
 }

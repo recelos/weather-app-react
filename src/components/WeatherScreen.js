@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import CurrentWeather from './current-weather/CurrentWeather';
+import './current-weather/CurrentWeather.css'
 import ForecastGrid from './forecast/ForecastGrid';
 import {IoIosExit} from 'react-icons/io'
 import './WeatherScreen.css'
@@ -14,7 +15,9 @@ function WeatherScreen(props) {
     const [forecast, setForecast] = useState(null);
     const [city, setCity] = useState('');
     const [alternateCurrentWeather, setAlternateCurrentWeather] = useState(false);
-    
+    const [showComponents, setShowComponents] = useState(false);
+
+
     useEffect(() => {
         async function fetchData(latitude, longitude){
             const currentWeatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
@@ -25,9 +28,14 @@ function WeatherScreen(props) {
             if (forecastResponse.status!==200) return;
             const forecastJson = await forecastResponse.json();
             console.log('fetched data')
-    
+
+            setShowComponents(false);  
+            
             setCurrentWeather(currentWeatherJson);
             setForecast(forecastJson);
+            setShowComponents(true);
+
+
         }
     
         if(navigator.geolocation){
@@ -75,9 +83,17 @@ function WeatherScreen(props) {
             const forecastJson = await forecastResponse.json();
 
             console.log('fetched data');
+            setShowComponents(false);  
 
-            setCurrentWeather(currentWeatherJson);
-            setForecast(forecastJson);
+
+            setTimeout(() => {
+                setCurrentWeather(currentWeatherJson);
+                setForecast(forecastJson);
+
+                setShowComponents(true);
+            }, 500);
+                
+
         }
         if(city === '') {
             alert('Please enter the city');
@@ -94,35 +110,57 @@ function WeatherScreen(props) {
     return(
         <div className='WeatherScreen'>
 
-            <IoIosExit
+            {/* <IoIosExit
                 className='icon' 
                 onClick={props.handleExitClick} 
                 style={{color:'#fff', position:'absolute', left:'20px', right:'0', width:'3rem', height:'3rem'}}  
                 onMouseOver={({target})=>target.style.color="lightGrey"}
                 onMouseOut={({target})=>target.style.color="white"}
-                />
-                {currentWeather &&
+                /> */}
+
+
+                <div className='header' onClick={props.handleExitClick}>
+                    <img 
+                        src={'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Emoji_u2600.svg/100px-Emoji_u2600.svg.png'} 
+                        className="logo" 
+                        alt="logo" />
+                    <span style={{fontWeight:'bold', display:'inline-flex', alignItems:'center', fontSize:'32px'}}>Weather app</span>
+                </div>
+                    {currentWeather &&
+                    <CSSTransition
+                        in={showComponents}
+                        classNames="transition"
+                        timeout={500}
+                    >
+
                     <CurrentWeather
-                    city={currentWeather.name}
-                    description={currentWeather.weather[0].description}
-                    temperature={Math.round(parseFloat(currentWeather.main.temp) - 273.15)}
-                    pressure={currentWeather.main.pressure}
-                    imageSource={currentWeather.weather[0].icon}
-                    humidity={currentWeather.main.humidity}
-                    sunset={currentWeather.sys.sunset+currentWeather.timezone}
-                    sunrise={currentWeather.sys.sunrise+currentWeather.timezone}
-                    alternate={alternateCurrentWeather}
-                    onClick={() => setAlternateCurrentWeather(!alternateCurrentWeather)}
+                        city={currentWeather.name}
+                        description={currentWeather.weather[0].description}
+                        temperature={Math.round(parseFloat(currentWeather.main.temp) - 273.15)}
+                        pressure={currentWeather.main.pressure}
+                        imageSource={currentWeather.weather[0].icon}
+                        humidity={currentWeather.main.humidity}
+                        sunset={currentWeather.sys.sunset+currentWeather.timezone}
+                        sunrise={currentWeather.sys.sunrise+currentWeather.timezone}
+                        alternate={alternateCurrentWeather}
+                        onClick={() => setAlternateCurrentWeather(!alternateCurrentWeather)}     
                     />
-                }
+                    </CSSTransition>
+                    }
 
                 <input className='input' placeholder='e.g. London' onInput={handleInput} onKeyPress={handleKeyPress} />
                 <button className='btn' onClick={handleClick}>Submit</button>  
                 {forecast &&
+                <CSSTransition
+                    in={showComponents}
+                    classNames="transition"
+                    timeout={500}
+                >
                 <ForecastGrid 
                     forecast = {forecast.daily}
                     timezone_offset = {forecast.timezone_offset}
                 />
+                </CSSTransition>
             }
         </div>
     )

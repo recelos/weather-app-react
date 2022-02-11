@@ -7,7 +7,7 @@
     text-align: center;
     min-width: 10rem;
     width: 17rem;
-  
+    margin-top:1rem;
     background-color: rgb(31, 41, 102);
   
     transition: all .5s;
@@ -54,7 +54,6 @@
   box-shadow: 0 5px 12px 0 #0f0f0f9f;
   z-index: 0;
 }  */
-
 
 .CurrentWeather h1{
   letter-spacing: 0.08rem;
