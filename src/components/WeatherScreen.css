@@ -23,7 +23,7 @@ input.input:hover {
 input.input:active,
 input.input:focus {
 	color: white;
-	border-color: rgb(31, 41, 102);
+	border-color: #1f2966;
 	outline: none;
 	background-color: #1f2966;
 }
@@ -79,18 +79,37 @@ input.input:focus {
 }
 
 .header{
-	padding-top: 0;
-	float:left;
+	float: left;
 	color:white;
-	display:flex;
+	display: flex;
 	cursor: pointer;
 }
+
+.header span{
+	font-weight: bold; 
+	display: inline-flex;
+	align-items: center;
+	font-size: 32px;
+}
+
+
+@media screen and (max-width:1000px) {
+	.header{
+		display:contents;
+		color:white;
+		cursor: pointer;
+		transition: background-color .3s;
+		align-items: center; 
+	}.header span{
+		display: block;
+	}
+}
+
 
 .logo{
 	pointer-events: none;
 	margin-left: 1rem;
 	margin-right: 1rem;
-
 }
 @media (prefers-reduced-motion: no-preference) {
 	.logo {
@@ -109,15 +128,20 @@ input.input:focus {
 
 .transition-enter {
 	opacity: 0;
+	transform: translateY(-50px);
 }
 .transition-enter-active{
 	opacity: 1;
 	transition: all .5s;
+	transform: translateY(0);
 }
 .transition-exit{
 	opacity:1;
+	transform: translateY(0);
 }
 .transition-exit-active{
 	opacity:0;
 	transition: all .5s;
+	transform: translateY(-50px);
+
 }

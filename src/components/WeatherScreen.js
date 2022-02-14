@@ -3,7 +3,6 @@ import { CSSTransition } from 'react-transition-group';
 import CurrentWeather from './current-weather/CurrentWeather';
 import './current-weather/CurrentWeather.css'
 import ForecastGrid from './forecast/ForecastGrid';
-import {IoIosExit} from 'react-icons/io'
 import './WeatherScreen.css'
 
 
@@ -70,14 +69,14 @@ function WeatherScreen(props) {
         async function fetchData(){
             const currentWeatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
             if (currentWeatherResponse.status!==200) {
-                alert('Please enter a valid location');
+                alert('Please enter a valid location.');
                 return;
             };
             const currentWeatherJson = await currentWeatherResponse.json();
 
             const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${currentWeatherJson.coord.lat}&lon=${currentWeatherJson.coord.lon}&exclude=current,hourly,minutely&appid=${apiKey}`)
             if (forecastResponse.status!==200) {
-                alert('Please enter a valid location');
+                alert('Please enter a valid location.');
                 return;                
             };
             const forecastJson = await forecastResponse.json();
@@ -96,7 +95,7 @@ function WeatherScreen(props) {
 
         }
         if(city === '') {
-            alert('Please enter the city');
+            alert('Please enter the city.');
             return
         };
         fetchData();
@@ -121,10 +120,10 @@ function WeatherScreen(props) {
 
                 <div className='header' onClick={props.handleExitClick}>
                     <img 
-                        src={'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Emoji_u2600.svg/100px-Emoji_u2600.svg.png'} 
+                        src={'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Emoji_u2600.svg/80px-Emoji_u2600.svg.png'} 
                         className="logo" 
                         alt="logo" />
-                    <span style={{fontWeight:'bold', display:'inline-flex', alignItems:'center', fontSize:'32px'}}>Weather app</span>
+                    <span>Weather app</span>
                 </div>
                     {currentWeather &&
                     <CSSTransition

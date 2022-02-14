@@ -1,44 +1,4 @@
-@media only screen and (min-width: 477px){
-  .CurrentWeather{     
-    margin: auto;
-    margin-bottom: 1.3rem;
-    padding: 1rem;
-    color: aliceblue;
-    text-align: center;
-    min-width: 10rem;
-    width: 17rem;
-    margin-top:1rem;
-    background-color: rgb(31, 41, 102);
-  
-    transition: all .5s;
-  
-    box-shadow: 0 5px 12px 0 #0f0f0f9f;
-    z-index: 0;
-  }  
-}
-
-
-@media only screen and (max-width: 478px) {
-  .CurrentWeather{     
-    margin: auto;
-    margin-bottom: 1.3rem;
-    margin-top: 50px;
-    padding: 1rem;
-    color: aliceblue;
-    text-align: center;
-    min-width: 10rem;
-    width: 17rem;
-  
-    background-color: rgb(31, 41, 102);
-  
-    transition: all .5s;
-  
-    box-shadow: 0 5px 12px 0 #0f0f0f9f;
-    z-index: 0;
-  }
-    
-}
-/* .CurrentWeather{     
+.CurrentWeather{     
   margin: auto;
   margin-bottom: 1.3rem;
   padding: 1rem;
@@ -46,14 +6,14 @@
   text-align: center;
   min-width: 10rem;
   width: 17rem;
-
+  margin-top:1rem;
   background-color: rgb(31, 41, 102);
 
   transition: all .5s;
 
   box-shadow: 0 5px 12px 0 #0f0f0f9f;
   z-index: 0;
-}  */
+}
 
 .CurrentWeather h1{
   letter-spacing: 0.08rem;

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import "./CurrentWeather.css";
 
 function CurrentWeather(props){
@@ -34,7 +34,7 @@ function CurrentWeather(props){
                 <img src={`../icons/${imageSource}.png`} alt={imageSource} /> <hr />
                 <h4>{alternate ? `Humidity: ${hum}%` : desc}</h4><hr />
                 <h4>{alternate ? `Sunrise: ${sunrise}` : `${temp}\u00B0C`}</h4><hr />
-                <h4>{alternate ?  `Sunset: ${sunset}` : `${press}hPa`}</h4>
+                <h4>{alternate ? `Sunset: ${sunset}` : `${press}hPa`}</h4>
                 <img src={alternate ? "../util/secondary-20px.png" : "../util/primary-20px.png"} alt=""/>
             </div>
     );
