@@ -1,6 +1,8 @@
 # [Weather app](https://weather-app-jg.netlify.app/)
 
-![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Emoji_u2600.svg/480px-Emoji_u2600.svg.png)
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Emoji_u2600.svg/480px-Emoji_u2600.svg.png" alt="Weather app logo"/>
+</p>
 
 Simple website for checking the weather. 
 
