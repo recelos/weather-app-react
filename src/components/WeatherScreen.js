@@ -109,15 +109,6 @@ function WeatherScreen(props) {
     return(
         <div className='WeatherScreen'>
 
-            {/* <IoIosExit
-                className='icon' 
-                onClick={props.handleExitClick} 
-                style={{color:'#fff', position:'absolute', left:'20px', right:'0', width:'3rem', height:'3rem'}}  
-                onMouseOver={({target})=>target.style.color="lightGrey"}
-                onMouseOut={({target})=>target.style.color="white"}
-                /> */}
-
-
                 <div className='header' onClick={props.handleExitClick}>
                     <img 
                         src={'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Emoji_u2600.svg/80px-Emoji_u2600.svg.png'} 
@@ -125,6 +116,7 @@ function WeatherScreen(props) {
                         alt="logo" />
                     <span>Weather app</span>
                 </div>
+
                     {currentWeather &&
                     <CSSTransition
                         in={showComponents}
