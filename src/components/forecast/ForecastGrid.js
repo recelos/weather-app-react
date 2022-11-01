@@ -2,7 +2,9 @@ import React, {useEffect, useState} from "react";
 import Forecast from "./Forecast";
 import "./ForecastGrid.css";
 
-function ForecastGrid(props){
+const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+export default function ForecastGrid(props){
     const [isAlternate, setIsAlternate] = useState([false, false, false, false, false, false]);
 
     const handleClick = (index) => {
@@ -15,8 +17,7 @@ function ForecastGrid(props){
         let newArray = [false, false, false, false, false, false];
         setIsAlternate(newArray);
     }, [props.forecast]);
-
-    const weekday = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    
 
     const forecasts = props.forecast.filter((element, i) => {
         return i > 0 && i < 7;
@@ -47,5 +48,3 @@ function ForecastGrid(props){
         </div>
     );
 }
-
-export default ForecastGrid;

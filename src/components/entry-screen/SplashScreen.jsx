@@ -1,7 +1,7 @@
 import React from "react";
 import "./SplashScreen.css";
 
-function SplashScreen(props){
+function SplashScreen(){
     return(
         <div className="SplashScreen">
             <img 
@@ -10,7 +10,6 @@ function SplashScreen(props){
             alt="logo" />
             <h1>Weather app</h1>
             <h4>powered by <a href="https://openweathermap.org/api" target="_blank">OpenWeather</a></h4>
-            <button onClick={props.handleClick}> What's the weather like?</button>
         </div>        
     );
 }
