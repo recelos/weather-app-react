@@ -5,4 +5,18 @@
 	margin: auto;
 	align-items: center;
 }
-
+.transition-enter {
+	opacity: 0;
+}
+.transition-enter-active{
+	opacity: 1;
+	transition: all .5s;
+}
+.transition-exit{
+	opacity: 1;
+}
+.transition-exit-active{
+	opacity: 0;
+	transition: all .5s;
+	transform: scale(4);
+}

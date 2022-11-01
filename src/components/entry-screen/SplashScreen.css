@@ -35,40 +35,6 @@
 .SplashScreen-logo {
   pointer-events: none;
 }
-/* .SplashScreen-logo {
-  margin-top: .5rem;
-  pointer-events: none;
-  margin-bottom: 1rem;
-} */
-.SplashScreen button{
-  appearance: none;
-  padding: 1.2rem 2.8rem;
-  margin-top: 1.5rem;
-  background: linear-gradient(45deg, rgb(31, 41, 102) 50%, transparent 50%);
-  background-position: 100%;
-  background-size: 400%;
-  color: aliceblue;
-  line-height: 1.5715;
-	position: relative;
-	display: inline-block;
-  font-family: Krub, sans-serif;
-  text-align: center;
-	font-weight: 500;
-	white-space: nowrap;
-	text-align: center;
-	border: 2px solid rgb(31, 41, 102);;
-	box-shadow: 0 2px #00000004;
-	cursor: pointer;
-  transition: all .4s;
-  font-size: 32px;
-  box-shadow: 0 5px 12px 0 #0f0f0f9f;
-}
-
-.SplashScreen button:hover{
-  background-position: 0;
-}
-
-
 @media (prefers-reduced-motion: no-preference) {
   .SplashScreen-logo {
     animation: SplashScreen-logo-spin infinite 10s linear;
@@ -82,13 +48,3 @@
     transform: rotate(360deg);
   }
 }
-/* @media screen and (max-width: 700px) {
-  .SplashScreen{
-    margin: auto;
-    align-items: center;
-    transform: scale(.5);
-  }
-  .SplashScreen-logo{
-    margin-top: 0;
-  }
-} */
